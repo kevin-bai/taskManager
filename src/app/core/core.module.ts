@@ -8,6 +8,11 @@ import {SidebarComponent} from './sidebar/sidebar.component';
   imports: [
     CommonModule
   ],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+  ],
   declarations: [HeaderComponent, FooterComponent, SidebarComponent]
 })
 export class CoreModule {
