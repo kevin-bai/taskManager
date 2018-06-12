@@ -9,10 +9,13 @@
   </nz-header>
 
   <nz-layout>
-    <nz-sider>
-      <ul nz-menu [nzMode]="'inline'" style="height:100%">
-        <li nz-submenu>
-          <span title><i class="anticon anticon-user"></i>subnav 1</span>
+    <nz-sider  [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]="0">
+      <ul nz-menu [nzMode]="'inline'" [nzTheme]="'dark'" style="max-width: 200px;height: 100%" >
+        <li nz-submenu >
+          <span title>
+            <i class="anticon anticon-user"></i>
+            <span>subnav 1</span>
+          </span>
           <ul>
             <li nz-menu-item>option1</li>
             <li nz-menu-item>option2</li>
@@ -21,7 +24,9 @@
           </ul>
         </li>
         <li nz-submenu>
-          <span title><i class="anticon anticon-laptop"></i>subnav 2</span>
+          <span title><i class="anticon anticon-laptop"></i>
+          <span>subnav 2</span>
+          </span>
           <ul>
             <li nz-menu-item>option5</li>
             <li nz-menu-item>option6</li>
@@ -30,7 +35,10 @@
           </ul>
         </li>
         <li nz-submenu>
-          <span title><i class="anticon anticon-notification"></i>subnav 3</span>
+          <span title>
+            <i class="anticon anticon-notification"></i>
+            <span>subnav 3</span>
+          </span>
           <ul>
             <li nz-menu-item>option9</li>
             <li nz-menu-item>option10</li>
@@ -40,7 +48,13 @@
         </li>
       </ul>
     </nz-sider>
-    <nz-content>Content</nz-content>
+
+    <nz-content style="padding: 10px;">
+      <button nz-button [nzType]="'primary'"   (click)="toggleCollapsed()" style="margin-bottom: 10px;">
+        <i class="anticon" [class.anticon-menu-unfold]="isCollapsed" [class.anticon-menu-fold]="!isCollapsed">
+        </i>
+      </button>
+    </nz-content>
   </nz-layout>
 
   <nz-footer>Footer</nz-footer>
