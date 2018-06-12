@@ -1,7 +1,7 @@
 import {NgModule, Optional, SkipSelf,} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NgZorroAntdModule} from 'ng-zorro-antd';
 
+import {SharedModule} from '../shared/shared.module'
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
@@ -9,13 +9,12 @@ import {SidebarComponent} from './sidebar/sidebar.component';
 @NgModule({
   imports: [
     CommonModule,
-    NgZorroAntdModule
+    SharedModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    NgZorroAntdModule
   ],
   declarations: [HeaderComponent, FooterComponent, SidebarComponent]
 })
