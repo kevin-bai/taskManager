@@ -1,6 +1,6 @@
 <nz-layout class="site">
   <nz-header>
-    <app-header></app-header>
+    <app-header (toggle)="toggleCollapsed()"></app-header>
   </nz-header>
 
   <nz-layout>
@@ -17,6 +17,7 @@
             <li nz-menu-item>option3</li>
             <li nz-menu-item>option4</li>
           </ul>
+
         </li>
         <li nz-submenu>
           <span title><i class="anticon anticon-laptop"></i>
@@ -50,13 +51,10 @@
         <nz-breadcrumb-item>App</nz-breadcrumb-item>
       </nz-breadcrumb>
       <nz-content style="background:#fff; padding: 24px; min-height: 280px;">
-        <button nz-button [nzType]="'primary'" (click)="toggleCollapsed()" style="margin-bottom: 10px;">
-          <i class="anticon" [class.anticon-menu-unfold]="isCollapsed" [class.anticon-menu-fold]="!isCollapsed">
-          </i>
-        </button>
+        
       </nz-content>
     </nz-layout>
   </nz-layout>
 
-  <nz-footer style="background: #2B2B2B;color: #ffffff;text-align: center">Footer</nz-footer>
+  <app-footer></app-footer>
 </nz-layout>
