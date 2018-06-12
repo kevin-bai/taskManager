@@ -1,17 +1,12 @@
 <nz-layout class="site">
   <nz-header>
-    <div class="logo"></div>
-    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
-      <li nz-menu-item>nav 1</li>
-      <li nz-menu-item>nav 2</li>
-      <li nz-menu-item>nav 3</li>
-    </ul>
+    <app-header></app-header>
   </nz-header>
 
   <nz-layout>
-    <nz-sider  [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]="0">
-      <ul nz-menu [nzMode]="'inline'" [nzTheme]="'dark'" style="max-width: 200px;height: 100%" >
-        <li nz-submenu >
+    <nz-sider [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]="0">
+      <ul nz-menu [nzMode]="'inline'" [nzTheme]="'dark'" style="max-width: 200px;height: 100%">
+        <li nz-submenu>
           <span title>
             <i class="anticon anticon-user"></i>
             <span>subnav 1</span>
@@ -48,14 +43,20 @@
         </li>
       </ul>
     </nz-sider>
-
-    <nz-content style="padding: 10px;">
-      <button nz-button [nzType]="'primary'"   (click)="toggleCollapsed()" style="margin-bottom: 10px;">
-        <i class="anticon" [class.anticon-menu-unfold]="isCollapsed" [class.anticon-menu-fold]="!isCollapsed">
-        </i>
-      </button>
-    </nz-content>
+    <nz-layout style="padding:0 24px 24px">
+      <nz-breadcrumb style="margin:16px 0;">
+        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+        <nz-breadcrumb-item>List</nz-breadcrumb-item>
+        <nz-breadcrumb-item>App</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <nz-content style="background:#fff; padding: 24px; min-height: 280px;">
+        <button nz-button [nzType]="'primary'" (click)="toggleCollapsed()" style="margin-bottom: 10px;">
+          <i class="anticon" [class.anticon-menu-unfold]="isCollapsed" [class.anticon-menu-fold]="!isCollapsed">
+          </i>
+        </button>
+      </nz-content>
+    </nz-layout>
   </nz-layout>
 
-  <nz-footer>Footer</nz-footer>
+  <nz-footer style="background: #2B2B2B;color: #ffffff;text-align: center">Footer</nz-footer>
 </nz-layout>

@@ -3,15 +3,18 @@ import {CommonModule} from '@angular/common';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
+import {NgZorroAntdModule} from 'ng-zorro-antd';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    NgZorroAntdModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    NgZorroAntdModule
   ],
   declarations: [HeaderComponent, FooterComponent, SidebarComponent]
 })
