@@ -18,7 +18,7 @@ import {SidebarComponent} from './sidebar/sidebar.component';
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parent: CoreModule) {
     if (parent) {
-      throw new Error('coreModule existed !')
+      throw new Error('coreModule existed !');
     }
   }
 }
