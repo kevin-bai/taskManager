@@ -1,8 +1,10 @@
-import { Component, OnInit,Input } from '@angular/core';
-import {  AbstractControl,
+import {Component, OnInit, Input} from '@angular/core';
+import {
+  AbstractControl,
   FormBuilder,
   FormGroup,
-  Validators} from '@angular/forms'
+  Validators
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -15,18 +17,19 @@ export class LoginComponent implements OnInit {
 
   submitForm(): void {
     for (const i in this.validateForm.controls) {
-      this.validateForm.controls[ i ].markAsDirty();
-      this.validateForm.controls[ i ].updateValueAndValidity();
+      this.validateForm.controls[i].markAsDirty();
+      this.validateForm.controls[i].updateValueAndValidity();
     }
   }
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
     this.validateForm = this.fb.group({
-      userName: [ null, [ Validators.required ] ],
-      password: [ null, [ Validators.required ] ],
-      remember: [ true ]
+      userName: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+      remember: [true]
     });
   }
 
