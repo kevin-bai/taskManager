@@ -6,7 +6,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isCollapsed: boolean = false;
+  isCollapsed = false;
   @Output() toggle = new EventEmitter<void>();
 
   constructor() {
